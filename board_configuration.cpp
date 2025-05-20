@@ -22,8 +22,8 @@ void setBoardDefaultConfiguration() {
      engineConfiguration->ignitionPins[5] = Gpio::E3;
 
      engineConfiguration->triggerInputPins[0] = Gpio::B1;
-     engineConfiguration->camInputs[0] = Gpio::A19; // 15A
-     engineConfiguration->camInputs[1] = Gpio::A8;
+     engineConfiguration->camInputs[0] = Gpio::A6; // 15A
+     engineConfiguration->camInputs[1] = Gpio::F8;
      setupTLE9201(Gpio::C9, Gpio::D4, Gpio::D7);
      engineConfiguration->vvtPins[0] = Gpio::C8;
      engineConfiguration->vvtPins[1] = Gpio::C7;
