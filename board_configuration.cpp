@@ -2,29 +2,32 @@
 #include "hellen_meta.h"
 #include "defaults.h"
 
-// board-specific configuration setup
 void setBoardDefaultConfiguration() {
-    setHellenVbatt();
-    setHellenCan();
-    setDefaultHellenAtPullUps();
-    // engineConfiguration->injectionPins[0] = Gpio::F13;
-    // engineConfiguration->ignitionPins[0] = Gpio::E15;
+     setHellenVbatt();
+     setHellenCan();
+     setDefaultHellenAtPullUps();
+     setHellenMMbaro();
+     engineConfiguration->injectionPins[0] = Gpio::F12;
+     engineConfiguration->injectionPins[1] = Gpio::G7;
+     engineConfiguration->injectionPins[2] = Gpio::D10;
+     engineConfiguration->injectionPins[3] = Gpio::G8;
+     engineConfiguration->injectionPins[4] = Gpio::D9;
+     engineConfiguration->injectionPins[5] = Gpio::D11;
 
-//   engineConfiguration->triggerInputPins[0] = Gpio::B1;
-//	engineConfiguration->triggerInputPins[1] = Gpio::Unassigned;
+     engineConfiguration->ignitionPins[0] = Gpio::E2;
+     engineConfiguration->ignitionPins[1] = Gpio::E5;
+     engineConfiguration->ignitionPins[2] = Gpio::E6;
+     engineConfiguration->ignitionPins[3] = Gpio::C13;
+     engineConfiguration->ignitionPins[4] = Gpio::E4;
+     engineConfiguration->ignitionPins[5] = Gpio::E3;
 
-//	engineConfiguration->map.sensor.hwChannel = EFI_ADC_3;
-
-//	engineConfiguration->clt.adcChannel = EFI_ADC_1;
-
-//	engineConfiguration->iat.adcChannel = EFI_ADC_2;
-
-
-    	// 5.6k high side/10k low side = 1.56 ratio divider
-  //  	engineConfiguration->analogInputDividerCoefficient = 1.56f;
-
-    	// 6.34k high side/ 1k low side
-//    	engineConfiguration->vbattDividerCoeff = (6.34 + 1) / 1;
-
-//	engineConfiguration->adcVcc = 3.3f;
+     engineConfiguration->triggerInputPins[0] = Gpio::B1;
+     engineConfiguration->camInputs[0] = Gpio::A19; // 15A
+     engineConfiguration->camInputs[1] = Gpio::A8;
+     setupTLE9201(Gpio::C9, Gpio::D4, Gpio::D7);
+     engineConfiguration->vvtPins[0] = Gpio::C8;
+     engineConfiguration->vvtPins[1] = Gpio::C7;
+     }
+void boardInitHardware() {
+    setHellenEnPin(Gpio::MM176_EN_PIN);
 }
