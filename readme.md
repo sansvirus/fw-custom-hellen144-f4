@@ -1,5 +1,3 @@
-See https://github.com/rusefi/rusefi/wiki/Custom-Firmware
+Firmware pour ecu KL Motorsport PNP MS42 et MS43 pour moteur bmw m52tu et m54 basé sur Rusefi et inspiré de l'architecture du Hellen mega 144
 
-A universal firmware for boards based on https://github.com/andreika-git/hellen-one/tree/master/modules/mega-mcu144
-
-See also https://github.com/rusefi/fw-community-hellen-100
+Sources : https://rusefi.com
